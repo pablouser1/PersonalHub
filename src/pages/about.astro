@@ -1,0 +1,59 @@
+---
+import Default from "../layouts/Default.astro";
+import about from '../data/about.json';
+import Card from "../components/Card.astro";
+---
+
+<Default title="About">
+  <p class="title" slot="header">About</p>
+  <div class="container">
+    <p class="title has-text-centered">Education</p>
+    <div class="columns is-mobile is-centered is-vcentered is-multiline">
+      {about.education.map(institution => {
+        return (
+          <div class="column is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+            <Card>
+              <figure class="image is-4by3" slot="image">
+                <img src={institution.image} />
+              </figure>
+              <div class="content" slot="content">
+                <p class="title">{institution.name}</p>
+                <p class="subtitle">{institution.year}</p>
+                <p>{institution.academy}</p>
+              </div>
+            </Card>
+          </div>
+        )
+      })}
+    </div>
+    <hr />
+    <p class="title has-text-centered">Experience</p>
+    {about.experience.map(category => {
+      // All items inside category
+      const items = category.items.map(item => {
+        // Conditionally add details if available on JSON
+        const details = item.details ? <p>{item.details}</p> : '';
+
+        // Column
+        return (
+          <div class="column is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+            <Card>
+              <figure class="image is-4by3" slot="image">
+                <img src={item.image} />
+              </figure>
+              <div class="content" slot="content">
+                <p class="title has-text-centered">{item.name}</p>
+                {details}
+              </div>
+            </Card>
+        </div>
+      )});
+
+      // Section
+      return (
+        <p class="has-text-centered">{category.name}</p>
+        <div class="columns is-mobile is-centered is-multiline">{items}</div>
+      )
+    })}
+  </div>
+</Default>

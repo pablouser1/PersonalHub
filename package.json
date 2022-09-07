@@ -1,0 +1,22 @@
+{
+  "name": "personalhub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^1.0.0",
+    "astro": "^1.1.6",
+    "astro-icon": "^0.7.3"
+  },
+  "devDependencies": {
+    "@astrojs/svelte": "^1.0.0",
+    "sass": "^1.54.8",
+    "svelte": "^3.46.4"
+  }
+}

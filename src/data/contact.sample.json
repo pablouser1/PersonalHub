@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Github",
+    "icon": "github",
+    "pack": "fa-brands",
+    "url": "https://github.com/github"
+  },
+  {
+    "name": "Twitter",
+    "icon": "twitter",
+    "pack": "fa-brands",
+    "url": "https://twitter.com/twitter"
+  }
+]

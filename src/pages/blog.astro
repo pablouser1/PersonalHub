@@ -1,0 +1,36 @@
+---
+import Default from "../layouts/Default.astro";
+import Card from "../components/Card.astro";
+import type Frontmatter from "../interfaces/Frontmatter";
+import Filter from "../components/Filter.svelte";
+
+const posts = await Astro.glob<Frontmatter>("./blog/*.md");
+posts.sort(
+  (a, b) =>
+    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+);
+---
+
+<Default title="Blog">
+  <p class="title" slot="header">Blog</p>
+  <div class="container">
+    <Filter client:only="svelte" />
+  </div>
+  <div class="columns is-centered is-vcentered">
+    {
+      posts.map((post) => {
+        return (
+          <div class="column item is-narrow" data-name={post.frontmatter.title}>
+            <Card>
+              <div class="content" slot="content">
+                <p class="title">{post.frontmatter.title}</p>
+                <p class="subtitle">{post.frontmatter.description}</p>
+              </div>
+              <a href={post.url} class="card-footer-item" slot="footer" rel="nofollow">Go</a>
+            </Card>
+          </div>
+        );
+      })
+    }
+  </div>
+</Default>

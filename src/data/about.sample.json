@@ -1,0 +1,22 @@
+{
+  "education": [
+    {
+      "name": "Software engineering",
+      "year": "2000-2004",
+      "academy": "Example collage",
+      "image": "/img/custom/logos/example.svg"
+    }
+  ],
+  "experience": [
+    {
+      "name": "Languages",
+      "items": [
+        {
+          "name": "PHP",
+          "details": "Custom details",
+          "image": "/img/custom/logos/php.svg"
+        }
+      ]
+    }
+  ]
+}

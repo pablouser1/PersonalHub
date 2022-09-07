@@ -1,0 +1,44 @@
+---
+import Default from "../layouts/Default.astro";
+import Card from "../components/Card.astro";
+import Filter from "../components/Filter.svelte";
+import type Service from "../interfaces/Service";
+
+const getServices = async (): Promise<Service[]> => {
+  try {
+    const services = await import('../data/services.json');
+    return services.default;
+  } catch {
+    return [];
+  }
+}
+
+const services = await getServices();
+
+---
+
+<Default title="Services">
+  <p class="title" slot="header">Services</p>
+  <div class="container">
+    <Filter client:only="svelte" />
+  </div>
+  <div class="columns is-centered is-vcentered">
+    {
+      services.map(service => {
+        return (
+          <div class="column is-narrow item" data-name={service.name}>
+            <Card>
+              <img src={service.image} slot="image" />
+              <div class="content" slot="content">
+                <p class="title">{service.name}</p>
+                <p class="subtitle">{service.description}</p>
+              </div>
+              <a href={service.url} class="card-footer-item" slot="footer" target="_blank" rel="nofollow">Go</a>
+              <a href={service.source} class="card-footer-item" slot="footer" target="_blank" rel="nofollow">Source</a>
+            </Card>
+          </div>
+        );
+      })
+    }
+  </div>
+</Default>

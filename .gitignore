@@ -1,0 +1,30 @@
+# build output
+dist/
+.output/
+
+# IDE
+/.vscode
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# Local
+/src/data/*.json
+!/src/data/*.sample.json
+/src/pages/blog/*.md
+/public/img/custom/*
+!/public/img/custom/.gitkeep

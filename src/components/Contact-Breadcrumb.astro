@@ -1,0 +1,21 @@
+---
+import Icon from 'astro-icon';
+import contact from '../data/contact.json'
+---
+
+<nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    {contact.map(item => {
+      return (
+        <li>
+          <a href={item.url} target="_blank" rel="nofollow">
+            <span class="icon is-small">
+              <Icon pack={item.pack} name={item.icon} />
+            </span>
+            <span>{item.name}</span>
+          </a>
+        </li>
+      )
+    })}
+  </ul>
+</nav>
