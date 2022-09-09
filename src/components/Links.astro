@@ -6,7 +6,7 @@ import Sections from "../helpers/Sections";
 <div class="buttons is-centered">
   {Sections.map(section => {
     return (
-      <a class={`button is-responsive ${section.color}`} href={section.url}>
+      <a class={`button ${section.color}`} href={section.url}>
         <span class="icon is-small">
           <Icon pack={section.pack} name={section.icon}></Icon>
         </span>
