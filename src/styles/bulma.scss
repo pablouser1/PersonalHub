@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../node_modules/bulmaswatch/superhero/_variables.scss";
+@import "../../node_modules/bulmaswatch/darkly/_variables.scss";
 
 // Utilities
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
@@ -37,4 +37,4 @@
 @import "../../node_modules/bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";
 
-@import "../../node_modules/bulmaswatch/superhero/_overrides.scss";
+@import "../../node_modules/bulmaswatch/darkly/_overrides.scss";
