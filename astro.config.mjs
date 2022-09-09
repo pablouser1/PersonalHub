@@ -9,6 +9,9 @@ export default defineConfig({
     svelte()
   ],
   vite: {
+    build: {
+      cssCodeSplit: false
+    },
     ssr: {
       external: ["svgo"],
     },

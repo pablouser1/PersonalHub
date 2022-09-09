@@ -2,10 +2,17 @@
 import Default from "../layouts/Default.astro";
 import about from '../data/about.json';
 import Card from "../components/Card.astro";
+import PhotoAside from "../components/PhotoAside.astro";
 ---
 
 <Default title="About">
-  <p class="title" slot="header">About</p>
+  <p class="title" slot="header">About me</p>
+  <PhotoAside>
+    <div class="box">
+      <p>{about.description}</p>
+    </div>
+  </PhotoAside>
+  <hr />
   <div class="container">
     <p class="title has-text-centered">Education</p>
     <div class="columns is-mobile is-centered is-vcentered is-multiline">
@@ -52,7 +59,7 @@ import Card from "../components/Card.astro";
       // Section
       return (
         <p class="has-text-centered">{category.name}</p>
-        <div class="columns is-mobile is-centered is-multiline">{items}</div>
+        <div class="columns is-centered is-multiline">{items}</div>
       )
     })}
   </div>

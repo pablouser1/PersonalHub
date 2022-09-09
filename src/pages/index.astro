@@ -2,6 +2,7 @@
 import ContactBreadcrumb from "../components/Contact-Breadcrumb.astro";
 import Head from '../components/Head.astro';
 import Links from "../components/Links.astro";
+import PhotoAside from "../components/PhotoAside.astro";
 import type Background from "../interfaces/Background";
 
 /**
@@ -30,28 +31,21 @@ const background = await loadBackground();
     <section class="hero is-fullheight has-bg-img">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <div class="columns is-centered is-vcentered">
-            <div class="column is-one-quarter">
-              <figure class="image">
-                <img src="/img/custom/me_home.png" />
-              </figure>
+          <PhotoAside>
+            <div class="box">
+              <p class="title">Welcome!</p>
+              <p class="subtitle">
+                <span>I'm</span> <span>{import.meta.env.NAME}</span>
+              </p>
+              <p>Social</p>
+              <ContactBreadcrumb />
+              <Links />
             </div>
-            <div class="column is-narrow">
-              <div class="box">
-                <p class="title">Welcome!</p>
-                <p class="subtitle">
-                  <span>I'm</span> <span>{import.meta.env.NAME}</span>
-                </p>
-                <p>Social</p>
-                <ContactBreadcrumb />
-                <Links />
-              </div>
-              <div class="box">
-                {background.author ? <p>Background photo by {background.author.name} on <a href={background.author.url} target="_blank" rel="nofollow">{background.author.platform}</a></p> : ""}
-                <p>Made with <span style="color: #e25555;">&#9829;</span> in <a href="https://github.com/pablouser1/PersonalHomepage" target="_blank" rel="nofollow">Github</a></p>
-              </div>
+            <div class="box">
+              {background.author ? <p>Background photo by {background.author.name} on <a href={background.author.url} target="_blank" rel="nofollow">{background.author.platform}</a></p> : ""}
+              <p>Made with <span style="color: #e25555;">&#9829;</span> in <a href="https://github.com/pablouser1/PersonalHomepage" target="_blank" rel="nofollow">Github</a></p>
             </div>
-          </div>
+          </PhotoAside>
         </div>
       </div>
     </section>
