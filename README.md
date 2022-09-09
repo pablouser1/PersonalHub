@@ -17,6 +17,3 @@ Copy `.env.sample` to `.env` and modify however you like
 
 ### .json
 Copy all the `/src/data/*.sample.json` files and modify them
-
-## TODO
-* Portfolio
