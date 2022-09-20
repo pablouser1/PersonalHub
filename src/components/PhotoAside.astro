@@ -1,10 +1,22 @@
-<div class="columns is-centered is-vcentered">
-  <div class="column is-one-quarter">
-    <figure class="image is-square">
-      <img src="/img/custom/me_home.png" />
+---
+export interface Props {
+  src: string;
+  mobile?: boolean;
+  l_size: number;
+  r_size: number;
+}
+
+const { src, mobile, l_size, r_size } = Astro.props
+
+---
+
+<div class:list={["columns", "is-centered", "is-vcentered", {"is-mobile": mobile}]}>
+  <div class:list={["column", `is-${l_size}`]}>
+    <figure class="image is-1by1">
+      <img src={src} />
     </figure>
   </div>
-  <div class="column is-narrow">
+  <div class:list={["column", `is-${r_size}`]}>
     <slot />
   </div>
 </div>
