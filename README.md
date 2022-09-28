@@ -12,6 +12,9 @@ yarn build
 ```
 
 ## Config
+### astro.config.mjs
+Open the file and change the "site" value
+
 ### .env
 Copy `.env.sample` to `.env` and modify however you like
 

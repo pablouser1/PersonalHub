@@ -1,6 +1,6 @@
 {
   "name": "personalhub",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -17,7 +17,9 @@
     "bulmaswatch": "^0.8.1"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/svelte": "^1.0.0",
+    "astro-robots-txt": "^0.3.9",
     "sass": "^1.54.8",
     "svelte": "^3.46.4"
   }

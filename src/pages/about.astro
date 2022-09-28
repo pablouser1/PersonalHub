@@ -30,27 +30,23 @@ import PhotoAside from "../components/PhotoAside.astro";
     <hr />
     <p class="title has-text-centered">Experience</p>
     {about.experience.map(category => {
-      // All items inside category
-      const items = category.items.map(item => {
-        // Conditionally add details if available on JSON
-        const details = item.details ? <p>{item.details}</p> : '';
-
-        // Column
-        return (
-          <div class="column is-3">
-            <div class="box">
-              <PhotoAside src={item.image} l_size={5} r_size={7} mobile>
-                <p class="title has-text-centered">{item.name}</p>
-                {details}
-              </PhotoAside>
-            </div>
-          </div>
-      )});
-
       // Section
       return (
         <p class="has-text-centered">{category.name}</p>
-        <div class="columns is-centered is-vcentered is-multiline">{items}</div>
+        <div class="columns is-centered is-vcentered is-multiline">{category.items.map(item => {
+          const details = item.details ? <p>{item.details}</p> : '';
+          return (
+            <div class="column is-3">
+              <div class="box">
+                <PhotoAside src={item.image} l_size={5} r_size={7} mobile>
+                  <p class="title has-text-centered">{item.name}</p>
+                  {details}
+                </PhotoAside>
+              </div>
+            </div>
+          )
+        })}
+        </div>
       )
     })}
   </div>
