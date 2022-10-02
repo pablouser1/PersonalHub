@@ -1,5 +1,5 @@
 export default interface Frontmatter {
-    title: string;
-    description?: string;
-    pubDate: string;
+  title: string;
+  description: string;
+  pubDate: string;
 }

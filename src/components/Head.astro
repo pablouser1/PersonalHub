@@ -1,9 +1,10 @@
 ---
-export interface Props {
-  title: string;
-}
+import type Props from '../interfaces/HeadProps';
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+
+const FINAL_TITLE = `${title} - Pablo Ferreiro`;
+
 import '../styles/bulma.scss';
 ---
 
@@ -11,5 +12,11 @@ import '../styles/bulma.scss';
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} - Pablo Ferreiro</title>
+  <title>{FINAL_TITLE}</title>
+  <meta name="description" content={description} />
+  <meta name="generator" content={Astro.generator} />
+  <meta property="og:title" content={FINAL_TITLE} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
 </head>

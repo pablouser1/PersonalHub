@@ -3,14 +3,13 @@ import type Frontmatter from "../interfaces/Frontmatter";
 import Default from "./Default.astro";
 
 export interface Props {
-  title: string;
   frontmatter: Frontmatter;
 }
 
 const { frontmatter } = Astro.props;
 ---
 
-<Default title={frontmatter.title}>
+<Default title={frontmatter.title} description={frontmatter.description}>
   <p class="title" slot="header">{frontmatter.title}</p>
   <div class="container">
     <slot />

@@ -17,7 +17,7 @@ const services = await getServices();
 
 ---
 
-<Default title="Services">
+<Default title="Services" description="List of services that I'm hosting">
   <p class="title" slot="header">Services</p>
   <div class="container">
     <Filter client:only="svelte" />
@@ -30,7 +30,7 @@ const services = await getServices();
             <Card>
               {service.image ? (
                 <figure slot="image" class="image is-16by9">
-                  <img src={service.image} />
+                  <img alt={service.name} src={service.image} />
                 </figure>
               ) : ''}
               <div class="content" slot="content">

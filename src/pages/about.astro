@@ -4,11 +4,13 @@ import about from '../data/about.json';
 import PhotoAside from "../components/PhotoAside.astro";
 ---
 
-<Default title="About">
+<Default title="About" description="Some information about me">
   <p class="title" slot="header">About me</p>
-  <div class="box">
-    <p>{about.description}</p>
-  </div>
+  <PhotoAside src="/img/custom/me.png" l_size={2} r_size={6}>
+    <div class="box">
+      <p>{about.description}</p>
+    </div>
+  </PhotoAside>
   <hr />
   <div class="container">
     <p class="title has-text-centered">Education</p>

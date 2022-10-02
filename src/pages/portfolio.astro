@@ -17,7 +17,7 @@ const portfolio = await getPorfolio();
 
 ---
 
-<Default title="Portfolio">
+<Default title="Portfolio" description="My personal projects">
   <p class="title" slot="header">Portfolio</p>
   <div class="container">
     <Filter client:only="svelte" />
@@ -30,7 +30,7 @@ const portfolio = await getPorfolio();
             <Card>
               {item.image ? (
                 <figure slot="image" class="image is-16by9">
-                  <img src={item.image} />
+                  <img alt={item.name} src={item.image} />
                 </figure>
               ) : ''}
               <div class="content" slot="content">

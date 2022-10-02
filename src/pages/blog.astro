@@ -9,9 +9,12 @@ posts.sort(
   (a, b) =>
     Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
 );
+
+const FINAL_DESCRIPTION = `${import.meta.env.NAME}'s personal blog'`
+
 ---
 
-<Default title="Blog">
+<Default title="Blog" description={FINAL_DESCRIPTION}>
   <p class="title" slot="header">Blog</p>
   <div class="container">
     <Filter client:only="svelte" />

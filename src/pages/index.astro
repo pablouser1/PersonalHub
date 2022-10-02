@@ -22,11 +22,14 @@ const loadBackground = async (): Promise<Background> => {
 }
 
 const background = await loadBackground();
+
+const FINAL_DESCRIPTION = `Hi! I'm ${import.meta.env.NAME}, welcome to my personal website!`
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head title="Home" />
+  <Head title="Home" description={FINAL_DESCRIPTION} />
   <body>
     <section class="hero is-fullheight has-bg-img">
       <div class="hero-body">
