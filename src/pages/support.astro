@@ -1,0 +1,52 @@
+---
+import Default from "../layouts/Default.astro";
+import type Support from "../interfaces/Support";
+import Icon from "astro-icon";
+
+const getSupport = async (): Promise<Support[]> => {
+  try {
+    const support = await import('../data/support.json');
+    return support.default;
+  } catch {
+    return [];
+  }
+}
+
+const support = await getSupport();
+---
+
+<Default title="Support" description="Methods for supporting my work">
+  <p class="title" slot="header">Support</p>
+  <div class="container box content">
+    <p>Hosting and mantaining this server requires both money and time, donating would allow me to keep this service running free of charge for everyone.</p>
+    <p>You can donate using one of the following platforms:</p>
+    <ul>
+      {
+        support.map(item => {
+          const icon = item.pack ? <Icon pack={item.pack} name={item.icon} /> : <img src={item.icon} alt={item.name} />
+          return (
+            <li>
+              <a href={item.url} target="_blank">
+                <span class="icon-text">
+                  <span class="icon">
+                    {icon}
+                  </span>
+                <span>{item.name}</span>
+              </span>
+              </a>
+            </li>
+          )
+        })
+      }
+    </ul>
+    <p>
+      <span class="icon-text">
+        <span class="icon">
+          <Icon style="color: red;" pack="fa-solid" name="heart" />
+        </span>
+        <span>Thank you for your support!</span>
+      </span>
+    </p>
+    <p>- {import.meta.env.NAME}</p>
+  </div>
+</Default>

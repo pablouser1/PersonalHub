@@ -1,9 +1,9 @@
 ---
 import type Props from '../interfaces/HeadProps';
 
-const { title, description } = Astro.props;
+const { name, title, description } = Astro.props;
 
-const FINAL_TITLE = `${title} - Pablo Ferreiro`;
+const FINAL_TITLE = `${title} - ${name}`;
 
 import '../styles/bulma.scss';
 ---

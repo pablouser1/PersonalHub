@@ -5,11 +5,13 @@ import Sections from "../helpers/Sections";
 import type Props from "../interfaces/HeadProps";
 
 const { title, description } = Astro.props;
+
+const { NAME } = import.meta.env;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head title={title} description={description} />
+  <Head title={title} description={description} name={NAME} />
   <body>
     <section class="hero is-primary">
       <div class="hero-body">

@@ -23,6 +23,7 @@ pnpm-debug.log*
 .DS_Store
 
 # Local
+/config.mjs
 /src/data/*.json
 !/src/data/*.sample.json
 /src/pages/blog/*.md

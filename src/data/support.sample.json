@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Liberapay",
+    "icon": "/img/custom/icons/liberapay.svg",
+    "url": "https://example.com"
+  },
+  {
+    "name": "PayPal",
+    "icon": "paypal",
+    "pack": "fa-brands",
+    "url": "https://example.com"
+  }
+]

@@ -7,9 +7,11 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
+
+const { NAME } = import.meta.env;
 ---
 
-<Default title={frontmatter.title} description={frontmatter.description}>
+<Default title={frontmatter.title} description={frontmatter.description} name={NAME}>
   <p class="title" slot="header">{frontmatter.title}</p>
   <div class="container">
     <slot />
