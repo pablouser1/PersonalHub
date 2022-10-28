@@ -1,17 +1,11 @@
 ---
-import type Frontmatter from "../interfaces/Frontmatter";
+import type Props from "../interfaces/BlogProps";
 import Default from "./Default.astro";
 
-export interface Props {
-  frontmatter: Frontmatter;
-}
-
 const { frontmatter } = Astro.props;
-
-const { NAME } = import.meta.env;
 ---
 
-<Default title={frontmatter.title} description={frontmatter.description} name={NAME}>
+<Default title={frontmatter.title} description={frontmatter.description}>
   <p class="title" slot="header">{frontmatter.title}</p>
   <div class="container">
     <slot />

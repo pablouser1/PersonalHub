@@ -1,5 +1,5 @@
-export default interface HeadProps {
-  title: string;
-  description: string;
+import type DefaultProps from "./DefaultProps";
+
+export default interface HeadProps extends DefaultProps {
   name: string;
 }

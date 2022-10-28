@@ -1,5 +1,5 @@
-export default interface Frontmatter {
-  title: string;
-  description: string;
+import type DefaultProps from "./DefaultProps";
+
+export default interface Frontmatter extends DefaultProps {
   pubDate: string;
 }

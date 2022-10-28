@@ -1,4 +1,4 @@
-export default interface Background {
+interface Background {
   url: string;
   author?: Author
 }
@@ -8,3 +8,5 @@ interface Author {
   platform: string;
   url: string;
 }
+
+export default Background
