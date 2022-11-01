@@ -6,7 +6,7 @@ import PhotoAside from "../components/PhotoAside.astro";
 
 <Default title="About" description="Some information about me">
   <p class="title" slot="header">About me</p>
-  <PhotoAside src="/img/custom/me.png" l_size={2} r_size={6}>
+  <PhotoAside src="/img/custom/me.png" l_size={2} r_size={6} ratio="1by1">
     <div class="box">
       <p>{about.description}</p>
     </div>
@@ -19,7 +19,7 @@ import PhotoAside from "../components/PhotoAside.astro";
         return (
           <div class="column is-4">
             <div class="box has-text-centered">
-              <PhotoAside src={institution.image} l_size={5} r_size={7} mobile>
+              <PhotoAside src={institution.image} l_size={5} r_size={7} mobile ratio="1by1">
                 <p class="title">{institution.name}</p>
                 <p class="subtitle">{institution.year}</p>
                 <p>{institution.academy}</p>
@@ -40,7 +40,7 @@ import PhotoAside from "../components/PhotoAside.astro";
           return (
             <div class="column is-3">
               <div class="box">
-                <PhotoAside src={item.image} l_size={5} r_size={7} mobile>
+                <PhotoAside src={item.image} l_size={5} r_size={7} mobile ratio="1by1">
                   <p class="title has-text-centered">{item.name}</p>
                   {details}
                 </PhotoAside>
