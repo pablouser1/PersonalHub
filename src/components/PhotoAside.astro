@@ -1,8 +1,8 @@
 ---
 export interface Props {
   src: string;
-  l_size: number;
-  r_size: number;
+  l_size: number | string;
+  r_size: number | string;
   ratio: string;
   mobile?: boolean;
   rounded?: boolean;
@@ -12,8 +12,8 @@ const { src, l_size, r_size, ratio, mobile, rounded } = Astro.props
 ---
 
 <div class:list={["columns", "is-centered", "is-vcentered", {"is-mobile": mobile}]}>
-  <div class:list={["column", "", `is-${l_size}`]}>
-    <figure class:list={["image", "is-inline-block", `is-${ratio}`]}>
+  <div class:list={["column", `is-${l_size}`]}>
+    <figure class:list={["image", `is-${ratio}`]}>
       <img alt="Hey, it's me!" src={src} class:list={[{"is-rounded": rounded}]} />
     </figure>
   </div>
