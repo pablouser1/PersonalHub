@@ -3,14 +3,15 @@ import Icon from 'astro-icon';
 import contact from '../data/contact.json'
 ---
 
-<nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-  <ul>
+<aside class="menu">
+  <p class="menu-label">Social</p>
+  <ul class="menu-list">
     {contact.map(item => {
       return (
         <li>
           <a href={item.url} target="_blank" rel="nofollow">
             <span class="icon is-small">
-              <Icon pack={item.pack} name={item.icon} />
+              <Icon pack={item.pack} name={item.icon} style={`color: ${item.color}`} />
             </span>
             <span>{item.name}</span>
           </a>
@@ -18,4 +19,4 @@ import contact from '../data/contact.json'
       )
     })}
   </ul>
-</nav>
+</aside>

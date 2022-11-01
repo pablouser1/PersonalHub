@@ -7,7 +7,7 @@
 
 <nav class="navbar" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">Pablo Ferreiro</a>
+    <a class="navbar-item" href="/">Home</a>
 
     <button class="navbar-burger" class:is-active="{burger === true}" aria-label="menu" aria-expanded="false" on:click={toggleBurger}>
       <span aria-hidden="true" />

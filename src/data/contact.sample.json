@@ -3,12 +3,14 @@
     "name": "Github",
     "icon": "github",
     "pack": "fa-brands",
+    "color": "black",
     "url": "https://github.com/github"
   },
   {
     "name": "Twitter",
     "icon": "twitter",
     "pack": "fa-brands",
+    "color": "#00acee",
     "url": "https://twitter.com/twitter"
   }
 ]

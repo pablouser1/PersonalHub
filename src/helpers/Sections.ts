@@ -3,35 +3,35 @@ const Sections = [
     "name": "About me",
     "icon": "info-circle",
     "pack": "fa-solid",
-    "color": "is-info",
+    "color": "lightblue",
     "url": "/about",
   },
   {
     "name": "Services",
     "icon": "server",
     "pack": "fa-solid",
-    "color": "is-primary",
+    "color": "grey",
     "url": "/services",
   },
   {
     "name": "Portfolio",
     "icon": "suitcase",
     "pack": "fa-solid",
-    "color": "is-success",
+    "color": "white",
     "url": "/portfolio",
   },
   {
     "name": "Blog",
     "icon": "blog",
     "pack": "fa-solid",
-    "color": "is-link",
+    "color": "#cf03fc",
     "url": "/blog",
   },
   {
     "name": "Support",
     "icon": "wallet",
     "pack": "fa-solid",
-    "color": "is-warning",
+    "color": "green",
     "url": "/support"
   }
 ]

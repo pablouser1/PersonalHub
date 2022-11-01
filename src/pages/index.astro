@@ -1,9 +1,9 @@
 ---
-import ContactBreadcrumb from "../components/Contact-Breadcrumb.astro";
+import Social from "../components/Social.astro";
 import Head from '../components/Head.astro';
 import Links from "../components/Links.astro";
-import PhotoAside from "../components/PhotoAside.astro";
 import type Background from "../interfaces/Background";
+import PhotoAside from "../components/PhotoAside.astro";
 
 const { NAME } = import.meta.env;
 
@@ -36,21 +36,34 @@ const FINAL_DESCRIPTION = `Hi! I'm ${NAME}, welcome to my personal website!`
     <section class="hero is-fullheight has-bg-img">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <PhotoAside src="/img/custom/me.png" l_size={3} r_size={5}>
-            <div class="box">
-              <p class="title">Welcome!</p>
-              <p class="subtitle">
-                <span>I'm</span> <span>{NAME}</span>
-              </p>
-              <p>Social</p>
-              <ContactBreadcrumb />
-              <Links />
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="box">
+                <PhotoAside src="/img/custom/me.png" l_size={3} r_size={4} rounded>
+                  <p class="title">Welcome!</p>
+                  <p class="subtitle">
+                    <span>I'm</span> <span>{NAME}</span>
+                  </p>
+                </PhotoAside>
+                <div class="columns is-centered is-vcentered">
+                  <div class="column is-half">
+                    <Links />
+                  </div>
+                  <div class="column is-half">
+                    <Social />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="box">
-              {background.author ? <p>Background photo by {background.author.name} on <a href={background.author.url} target="_blank" rel="nofollow">{background.author.platform}</a></p> : ""}
-              <p>Made with <span style="color: #e25555;">&#9829;</span> in <a href="https://github.com/pablouser1/PersonalHub" target="_blank" rel="nofollow">Github</a></p>
+          </div>
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-half">
+              <div class="box">
+                {background.author ? <p>Background photo by {background.author.name} on <a href={background.author.url} target="_blank" rel="nofollow">{background.author.platform}</a></p> : ""}
+                <p>Made with <span style="color: #e25555;">&#9829;</span> in <a href="https://github.com/pablouser1/PersonalHub" target="_blank" rel="nofollow">Github</a></p>
+              </div>
             </div>
-          </PhotoAside>
+          </div>
         </div>
       </div>
     </section>

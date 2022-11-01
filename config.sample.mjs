@@ -1,5 +1,5 @@
 const CONFIG = {
-  SITE: "https://pabloferreiro.es"
+  SITE: "https://example.com"
 }
 
 export default CONFIG;

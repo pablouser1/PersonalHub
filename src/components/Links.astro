@@ -1,17 +1,22 @@
 ---
 import Icon from "astro-icon";
-import Sections from "../helpers/Sections";
+import sections from "../helpers/Sections";
 ---
 
-<div class="buttons is-centered">
-  {Sections.map(section => {
-    return (
-      <a class={`button ${section.color}`} href={section.url}>
-        <span class="icon is-small">
-          <Icon pack={section.pack} name={section.icon}></Icon>
-        </span>
-        <span>{section.name}</span>
-      </a>
-    )
-  })}
-</div>
+<aside class="menu">
+  <p class="menu-label">Sections</p>
+  <ul class="menu-list">
+    {sections.map(section => {
+      return (
+        <li>
+          <a href={section.url}>
+            <span class="icon is-small">
+              <Icon pack={section.pack} name={section.icon} style={`color: ${section.color}`} />
+            </span>
+            <span>{section.name}</span>
+          </a>
+        </li>
+      )
+    })}
+  </ul>
+</aside>
