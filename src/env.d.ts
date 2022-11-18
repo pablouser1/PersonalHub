@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly NAME: string;
+  readonly ME_IMAGE: string;
 }
 
 interface ImportMeta {

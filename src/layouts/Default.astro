@@ -2,6 +2,7 @@
 import Head from "../components/Head.astro";
 import Navbar from "../components/Navbar.svelte";
 import Sections from "../helpers/Sections";
+import Footer from "../components/Footer.astro";
 import type Props from "../interfaces/DefaultProps";
 
 const { title, description } = Astro.props;
@@ -26,5 +27,6 @@ const { NAME } = import.meta.env;
     <section class="section">
       <slot />
     </section>
+    <Footer />
   </body>
 </html>

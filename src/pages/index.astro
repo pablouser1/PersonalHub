@@ -5,7 +5,7 @@ import Links from "../components/Links.astro";
 import type Background from "../interfaces/Background";
 import PhotoAside from "../components/PhotoAside.astro";
 
-const { NAME } = import.meta.env;
+const { NAME, ME_IMAGE } = import.meta.env;
 
 /**
  * Handle background
@@ -39,7 +39,7 @@ const FINAL_DESCRIPTION = `Hi! I'm ${NAME}, welcome to my personal website!`
           <div class="columns is-centered">
             <div class="column is-half">
               <div class="box">
-                <PhotoAside src="/img/custom/me.png" l_size="narrow" r_size="narrow" ratio="128x128" mobile rounded>
+                <PhotoAside src={ME_IMAGE} l_size="narrow" r_size="narrow" ratio="128x128" mobile rounded>
                   <p class="title">Welcome!</p>
                   <p class="subtitle">
                     <span>I'm</span> <span>{NAME}</span>

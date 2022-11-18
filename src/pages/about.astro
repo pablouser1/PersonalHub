@@ -6,11 +6,9 @@ import PhotoAside from "../components/PhotoAside.astro";
 
 <Default title="About" description="Some information about me">
   <p class="title" slot="header">About me</p>
-  <PhotoAside src="/img/custom/me.png" l_size={2} r_size={6} ratio="1by1">
-    <div class="box">
-      <p>{about.description}</p>
-    </div>
-  </PhotoAside>
+  <div class="content">
+    <p>{about.description}</p>
+  </div>
   <hr />
   <div class="container">
     <p class="title has-text-centered">Education</p>
