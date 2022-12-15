@@ -3,6 +3,8 @@
     "name": "Portfolio example",
     "description": "Example",
     "image": "",
-    "url": "https://example.com"
+    "url": "https://example.com",
+    "tags": ["php", "js"],
+    "langs": ["es"]
   }
 ]

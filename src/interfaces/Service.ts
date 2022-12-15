@@ -4,4 +4,6 @@ export default interface Service {
   image?: string;
   url: string;
   source?: string;
+  tags?: string[];
+  langs?: string[];
 }
