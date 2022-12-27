@@ -1,11 +1,21 @@
 ---
 import Default from "../layouts/Default.astro";
 import Card from "../components/Card.astro";
-import type Frontmatter from "../interfaces/Frontmatter";
 import Filter from "../components/Filter.svelte";
+import type Frontmatter from "../interfaces/Frontmatter";
+import type { MarkdownInstance } from "astro";
 
-const posts = await Astro.glob<Frontmatter>("./blog/*.md");
-posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+const getPosts = async (): Promise<MarkdownInstance<Frontmatter>[]> => {
+  try {
+    const posts = await Astro.glob<Frontmatter>("./blog/*.md");
+    posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+    return posts;
+  } catch {
+    return [];
+  }
+}
+
+const posts = await getPosts();
 
 const FINAL_DESCRIPTION = `${import.meta.env.NAME}'s personal blog'`
 
