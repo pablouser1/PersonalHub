@@ -5,6 +5,7 @@
     "image": "",
     "url": "https://example.com",
     "tags": ["php", "js"],
-    "langs": ["es"]
+    "langs": ["es"],
+    "beta": false
   }
 ]

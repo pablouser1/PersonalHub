@@ -6,4 +6,5 @@ export default interface Service {
   source?: string;
   tags?: string[];
   langs?: string[];
+  beta?: boolean;
 }

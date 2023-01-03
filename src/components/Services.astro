@@ -18,12 +18,12 @@ const { services } = Astro.props
           <div class="column is-one-quarter item" data-name={item.name}>
             <Card>
               {item.image ? (
-                <figure slot="image" class="image is-16by9">
+                <figure slot="image" class="image">
                   <img alt={item.name} src={item.image} />
                 </figure>
               ) : ''}
               <div class="content" slot="content">
-                <p class="title">{item.name}</p>
+                <p class="title">{item.name} {item.beta ? <small class="has-text-danger">(beta)</small> : ''}</p>
                 <p class="subtitle">{item.description}</p>
                 {item.tags ? (
                   <div class="tags">
