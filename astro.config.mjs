@@ -8,13 +8,5 @@ import config from './config.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: config.SITE,
-  integrations: [svelte(), sitemap(), robotsTxt()],
-  vite: {
-    build: {
-      cssCodeSplit: false
-    },
-    ssr: {
-      external: ["svgo"]
-    }
-  }
+  integrations: [svelte(), sitemap(), robotsTxt()]
 });
