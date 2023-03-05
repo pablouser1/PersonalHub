@@ -1,8 +1,10 @@
 import rss, { pagesGlobToRssItems } from "@astrojs/rss";
 
 export const get = async () => {
+  const { ME_NAME } = import.meta.env
+
   return rss({
-    title: "Pablo Ferreiro's blog",
+    title: `${ME_NAME}'s blog`,
     description: "My personal dev blog",
     site: import.meta.env.SITE,
     items: await pagesGlobToRssItems(
