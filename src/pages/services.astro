@@ -1,6 +1,6 @@
 ---
 import Default from "../layouts/Default.astro";
-import Filter from "../components/Filter.svelte";
+import Filter from "../components/Filter";
 import type Service from "../interfaces/Service";
 import Services from "../components/Services.astro";
 
@@ -23,7 +23,7 @@ const services = await getServices();
     <p>This is a list with all the public instances that I host on this server</p>
   </div>
   <div class="container">
-    <Filter client:only="svelte" />
+    <Filter client:only="solid-js" />
   </div>
   <Services services={services} />
 </Default>

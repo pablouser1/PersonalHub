@@ -5,7 +5,7 @@ import Links from "../components/Links.astro";
 import type Background from "../interfaces/Background";
 import PhotoAside from "../components/PhotoAside.astro";
 
-const { NAME, ME_IMAGE } = import.meta.env;
+const { ME_NAME, ME_IMAGE } = import.meta.env;
 
 /**
  * Handle background
@@ -25,13 +25,13 @@ const loadBackground = async (): Promise<Background> => {
 
 const background = await loadBackground();
 
-const FINAL_DESCRIPTION = `Hi! I'm ${NAME}, welcome to my personal website!`
+const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
 
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head title="Home" description={FINAL_DESCRIPTION} name={NAME} />
+  <Head title="Home" description={FINAL_DESCRIPTION} name={ME_NAME} />
   <body>
     <section class="hero is-fullheight has-bg-img">
       <div class="hero-body">
@@ -42,7 +42,7 @@ const FINAL_DESCRIPTION = `Hi! I'm ${NAME}, welcome to my personal website!`
                 <PhotoAside src={ME_IMAGE} l_size="narrow" r_size="narrow" ratio="128x128" mobile rounded>
                   <p class="title">Welcome!</p>
                   <p class="subtitle">
-                    <span>I'm</span> <span>{NAME}</span>
+                    <span>I'm</span> <span>{ME_NAME}</span>
                   </p>
                 </PhotoAside>
                 <div class="columns is-centered is-vcentered">

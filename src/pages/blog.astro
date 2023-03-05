@@ -1,7 +1,7 @@
 ---
 import Default from "../layouts/Default.astro";
 import Card from "../components/Card.astro";
-import Filter from "../components/Filter.svelte";
+import Filter from "../components/Filter";
 import type Frontmatter from "../interfaces/Frontmatter";
 import type { MarkdownInstance } from "astro";
 
@@ -24,7 +24,7 @@ const FINAL_DESCRIPTION = `${import.meta.env.NAME}'s personal blog'`
 <Default title="Blog" description={FINAL_DESCRIPTION}>
   <p class="title" slot="header">Blog</p>
   <div class="container">
-    <Filter client:only="svelte" />
+    <Filter client:only="solid-js" />
   </div>
   <div class="columns is-centered is-vcentered">
     {

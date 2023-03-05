@@ -3,7 +3,7 @@ import Default from "../layouts/Default.astro";
 import about from '../data/about.json';
 import PhotoAside from "../components/PhotoAside.astro";
 
-const { NAME, ME_IMAGE } = import.meta.env;
+const { ME_NAME, ME_IMAGE } = import.meta.env;
 ---
 
 <Default title="About" description="Some information about me">
@@ -11,7 +11,7 @@ const { NAME, ME_IMAGE } = import.meta.env;
   <PhotoAside src={ME_IMAGE} l_size="narrow" r_size="narrow" ratio="128x128" rounded>
     <p class="title">Hi!</p>
     <p class="subtitle">
-      <span>I'm</span> <span>{NAME}</span>
+      <span>I'm</span> <span>{ME_NAME}</span>
     </p>
   </PhotoAside>
   <div class="content has-text-centered">
