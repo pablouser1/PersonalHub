@@ -7,12 +7,12 @@ import type Props from "../interfaces/DefaultProps";
 
 const { title, description } = Astro.props;
 
-const { NAME } = import.meta.env;
+const { ME_NAME } = import.meta.env;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head title={title} description={description} name={NAME} />
+  <Head title={title} description={description} name={ME_NAME} />
   <body>
     <section class="hero is-primary">
       <div class="hero-body">
