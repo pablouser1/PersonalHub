@@ -1,59 +1,75 @@
 ---
-import type Service from '../interfaces/Service';
-import Card from './Card.astro';
-import Langs from '../helpers/Langs';
+import type Service from "../interfaces/Service";
+import Card from "./Card.astro";
+import Langs from "../helpers/Langs";
 
 interface Props {
-    services: Service[]
+  services: Service[];
 }
 
-const { services } = Astro.props
-
+const { services } = Astro.props;
 ---
 
 <div class="columns is-centered is-vcentered is-multiline">
-    {
-      services.map(item => {
-        return (
-          <div class="column is-one-quarter item" data-name={item.name}>
-            <Card>
-              {item.image ? (
-                <figure slot="image" class="image">
-                  <img alt={item.name} src={item.image} />
-                </figure>
-              ) : ''}
-              <div class="content" slot="content">
-                <p class="title">{item.name} {item.beta ? <small class="has-text-danger">(beta)</small> : ''}</p>
-                <p class="subtitle">{item.description}</p>
-                {item.tags ? (
-                  <div class="tags">
-                    {item.tags.map(tag => {
-                      return <span class="tag is-rounded is-primary">{tag}</span>
-                    })}
-                  </div>
-                ) : ''}
-                {item.langs ? (
-                  <div class="field is-grouped is-grouped-multiline">
-                    {item.langs.map(lang => {
-                      return (
-                        <div class="control">
-                          <div class="tags has-addons">
-                            <span class="tag is-suuccess">{lang}</span>
-                            <span class="tag is-info">{Langs.parse(lang)}</span>
-                          </div>
+  {
+    services.map((item) => {
+      return (
+        <div class="column is-one-quarter item" data-name={item.name}>
+          <Card>
+            {item.image ? (
+              <figure slot="image" class="image">
+                <img alt={item.name} src={item.image} />
+              </figure>
+            ) : ""}
+            <div class="content" slot="content">
+              <p class="title">{item.name} {item.beta ? <small class="has-text-danger">(beta)</small> : ""}</p>
+              <p class="subtitle">{item.description}</p>
+              {item.tags ? (
+                <div class="tags">
+                  {item.tags.map(tag => {
+                    return (
+                      <span class="tag is-rounded is-primary">{tag}</span>
+                    )
+                  })}
+                </div>
+              ) : ""}
+              {item.langs ? (
+                <div class="field is-grouped is-grouped-multiline">
+                  {item.langs.map((lang) => {
+                    return (
+                      <div class="control">
+                        <div class="tags has-addons">
+                          <span class="tag is-suuccess">{lang}</span>
+                          <span class="tag is-info">{Langs.parse(lang)}</span>
                         </div>
-                      )
-                    })}
-                  </div>
-                ) : ''}
-              </div>
-              <a href={item.url} class="card-footer-item" slot="footer" target="_blank" rel="nofollow">Go</a>
-              {item.source ? (
-                <a href={item.source} class="card-footer-item" slot="footer" target="_blank" rel="nofollow">Source</a>
-              ) : ''}
-            </Card>
-          </div>
-        );
-      })
-    }
-  </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : ""}
+            </div>
+            <a href={item.url}
+              class="card-footer-item"
+              slot="footer"
+              target="_blank"
+              rel="nofollow"
+            >
+              Go
+            </a>
+            {item.source ? (
+              <a
+                href={item.source}
+                class="card-footer-item"
+                slot="footer"
+                target="_blank"
+                rel="nofollow"
+              >
+                Source
+              </a>
+            ) : ""}
+          </Card>
+        </div>
+      );
+    })
+  }
+</div>
