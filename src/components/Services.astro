@@ -16,57 +16,54 @@ const { services } = Astro.props;
       return (
         <div class="column is-one-quarter item" data-name={item.name}>
           <Card>
-            {item.image ? (
+            {item.image && (
               <figure slot="image" class="image">
                 <img alt={item.name} src={item.image} />
               </figure>
-            ) : ""}
+            )}
             <div class="content" slot="content">
-              <p class="title">{item.name} {item.beta ? <small class="has-text-danger">(beta)</small> : ""}</p>
+              <p class="title">
+                {item.name} {item.beta && <small class="has-text-danger">(beta)</small>}
+              </p>
               <p class="subtitle">{item.description}</p>
-              {item.tags ? (
+              {item.tags && (
                 <div class="tags">
-                  {item.tags.map(tag => {
-                    return (
-                      <span class="tag is-rounded is-primary">{tag}</span>
-                    )
-                  })}
+                  {item.tags.map((tag) => (
+                    <span class="tag is-rounded is-primary">{tag}</span>
+                  ))}
                 </div>
-              ) : ""}
-              {item.langs ? (
+              )}
+              {item.langs && (
                 <div class="field is-grouped is-grouped-multiline">
-                  {item.langs.map((lang) => {
-                    return (
-                      <div class="control">
-                        <div class="tags has-addons">
-                          <span class="tag is-suuccess">{lang}</span>
-                          <span class="tag is-info">{Langs.parse(lang)}</span>
-                        </div>
+                  {item.langs.map((lang) => (
+                    <div class="control">
+                      <div class="tags has-addons">
+                        <span class="tag is-suuccess">{lang}</span>
+                        <span class="tag is-info">{Langs.parse(lang)}</span>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
-              ) : ""}
+              )}
             </div>
-            <a href={item.url}
+            <a
+              href={item.url}
               class="card-footer-item"
               slot="footer"
               target="_blank"
-              rel="nofollow"
             >
               Go
             </a>
-            {item.source ? (
+            {item.source && (
               <a
                 href={item.source}
                 class="card-footer-item"
                 slot="footer"
                 target="_blank"
-                rel="nofollow"
               >
                 Source
               </a>
-            ) : ""}
+            )}
           </Card>
         </div>
       );

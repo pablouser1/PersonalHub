@@ -7,18 +7,18 @@ const Sections = [
     "url": "/about",
   },
   {
-    "name": "Services",
-    "icon": "server",
-    "pack": "fa-solid",
-    "color": "grey",
-    "url": "/services",
-  },
-  {
     "name": "Portfolio",
     "icon": "suitcase",
     "pack": "fa-solid",
     "color": "white",
     "url": "/portfolio",
+  },
+  {
+    "name": "Services",
+    "icon": "server",
+    "pack": "fa-solid",
+    "color": "grey",
+    "url": "/services",
   },
   {
     "name": "Blog",

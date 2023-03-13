@@ -8,7 +8,7 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
 
 <Default title="About" description="Some information about me">
   <p class="title" slot="header">About me</p>
-  <PhotoAside src={ME_IMAGE} l_size="narrow" r_size="narrow" ratio="128x128" rounded>
+  <PhotoAside src={ME_IMAGE} alt={ME_NAME} l_size="narrow" r_size="narrow" ratio="128x128" rounded>
     <p class="title">Hi!</p>
     <p class="subtitle">
       <span>I'm</span> <span>{ME_NAME}</span>
@@ -25,7 +25,7 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
         return (
           <div class="column is-4">
             <div class="box has-text-centered">
-              <PhotoAside src={institution.image} l_size={5} r_size={7} mobile ratio="1by1">
+              <PhotoAside alt={`${institution.name} in ${institution.academy}`} src={institution.image} l_size={5} r_size={7} mobile ratio="1by1">
                 <p class="title">{institution.name}</p>
                 <p class="subtitle">{institution.year}</p>
                 <p>{institution.academy}</p>
@@ -40,15 +40,14 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
     {about.experience.map(category => {
       // Section
       return (
-        <p class="has-text-centered mb-2">{category.name}</p>
+        <p class="mb-2 is-size-5 has-text-centered">{category.name}</p>
         <div class="columns is-centered is-vcentered is-multiline">{category.items.map(item => {
-          const details = item.details ? <p>{item.details}</p> : '';
           return (
             <div class="column is-3">
-              <div class="box">
-                <PhotoAside src={item.image} l_size={5} r_size={7} mobile ratio="1by1">
-                  <p class="title has-text-centered">{item.name}</p>
-                  {details}
+              <div class="box has-text-centered">
+                <PhotoAside alt={item.name} src={item.image} l_size={5} r_size={7} mobile ratio="1by1">
+                  <p class="title">{item.name}</p>
+                  {"details" in item && item.details !== "" && <p>{item.details}</p>}
                 </PhotoAside>
               </div>
             </div>

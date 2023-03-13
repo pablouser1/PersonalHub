@@ -1,11 +1,10 @@
 ---
+import '../styles/bulma.scss';
 import type Props from '../interfaces/HeadProps';
 
 const { name, title, description } = Astro.props;
 
 const FINAL_TITLE = `${title} - ${name}`;
-
-import '../styles/bulma.scss';
 ---
 
 <head>
