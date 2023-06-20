@@ -21,13 +21,6 @@ const Sections = [
     "url": "/services",
   },
   {
-    "name": "Blog",
-    "icon": "blog",
-    "pack": "fa-solid",
-    "color": "#cf03fc",
-    "url": "/blog",
-  },
-  {
     "name": "Support",
     "icon": "wallet",
     "pack": "fa-solid",
