@@ -36,6 +36,25 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
       })}
     </div>
     <hr />
+    {about.volunteering ? (
+      <p class="title has-text-centered">Volunteering</p>
+      <div class="columns is-centered is-vcentered is-multiline">
+        {about.volunteering.map(vol => {
+          return (
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <PhotoAside alt={vol.name} src={vol.image} l_size={5} r_size={7} mobile ratio="1by1">
+                <p class="title">{vol.name}</p>
+                <p class="subtitle">{vol.date}</p>
+                <a href={vol.url} target="_blank">More info</a>
+              </PhotoAside>
+            </div>
+          </div>
+        )
+        })}
+      </div>
+      <hr />
+    ) : ''}
     <p class="title has-text-centered">Experience</p>
     {about.experience.map(category => {
       // Section
