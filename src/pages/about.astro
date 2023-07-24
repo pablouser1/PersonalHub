@@ -8,7 +8,7 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
 
 <Default title="About" description="Some information about me">
   <p class="title" slot="header">About me</p>
-  <PhotoAside src={ME_IMAGE} alt={ME_NAME} l_size="narrow" r_size="narrow" ratio="128x128" rounded>
+  <PhotoAside src={ME_IMAGE} alt={ME_NAME} l_size="narrow" r_size="narrow" ratio="128x128" mobile rounded>
     <p class="title">Hi!</p>
     <p class="subtitle">
       <span>I'm</span> <span>{ME_NAME}</span>
