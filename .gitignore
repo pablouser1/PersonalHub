@@ -30,3 +30,5 @@ pnpm-debug.log*
 /src/pages/blog/*.md
 /public/img/custom/*
 !/public/img/custom/.gitkeep
+/public/docs/*
+!/public/docs/.gitkeep

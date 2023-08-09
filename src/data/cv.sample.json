@@ -1,0 +1,15 @@
+{
+  "base": "/docs/cv-%VAR%.pdf",
+  "variants": [
+    {
+      "id": "en",
+      "name": "English",
+      "flag": "🇬🇧"
+    },
+    {
+      "id": "es",
+      "name": "Español",
+      "flag": "🇪🇸"
+    }
+  ]
+}

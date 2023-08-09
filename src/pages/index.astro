@@ -3,8 +3,8 @@ import Social from "../components/Social.astro";
 import Head from '../components/Head.astro';
 import Links from "../components/Links.astro";
 import type Background from "../interfaces/Background";
+import type CV from "../interfaces/CV";
 import PhotoAside from "../components/PhotoAside.astro";
-import pkg from '../../package.json';
 import FooterCommon from "../components/FooterCommon.astro";
 
 const { ME_NAME, ME_IMAGE } = import.meta.env;
@@ -25,7 +25,24 @@ const loadBackground = async (): Promise<Background> => {
   }
 }
 
+/**
+ * Handle CV data
+ */
+const loadCV = async (): Promise<CV> => {
+  try {
+    const cv = await import('../data/cv.json');
+    return cv.default;
+  } catch {
+    return {
+      base: "",
+      variants: []
+    }
+  }
+}
+
 const background = await loadBackground();
+
+const cv = await loadCV();
 
 const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
 
@@ -46,6 +63,16 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
                   <p class="subtitle">
                     <span>I'm</span> <span>{ME_NAME}</span>
                   </p>
+                  <p class="is-size-6 has-text-grey-light">My CV</p>
+                  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+                    <ul>
+                      {cv.variants.map(variant =>
+                        <li>
+                          <a href={cv.base.replace("%VAR%", variant.id)}>{variant.flag} {variant.name}</a>
+                        </li>
+                      )}
+                    </ul>
+                  </nav>
                 </PhotoAside>
                 <div class="columns is-centered is-vcentered">
                   <div class="column is-half">
