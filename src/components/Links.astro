@@ -10,10 +10,12 @@ import sections from "../constants/Sections";
       return (
         <li>
           <a href={section.url}>
-            <span class="icon is-small">
-              <Icon pack={section.pack} name={section.icon} style={`color: ${section.color}`} />
+            <span class="icon-text">
+              <span class="icon">
+                <Icon pack={section.pack} name={section.icon} style={`color: ${section.color}`} />
+              </span>
+              <span>{section.name}</span>
             </span>
-            <span>{section.name}</span>
           </a>
         </li>
       )

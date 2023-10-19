@@ -10,10 +10,12 @@ import contact from '../data/contact.json'
       return (
         <li>
           <a href={item.url} target="_blank" rel="nofollow">
-            <span class="icon is-small">
-              <Icon pack={item.pack} name={item.icon} style={`color: ${item.color}`} />
+            <span class="icon-text">
+              <span class="icon">
+                <Icon pack={item.pack} name={item.icon} style={`color: ${item.color}`} />
+              </span>
+              <span>{item.name}</span>
             </span>
-            <span>{item.name}</span>
           </a>
         </li>
       )

@@ -71,7 +71,14 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
                       <ul>
                         {cv.variants.map(variant =>
                           <li>
-                            <a href={cv.base.replace("%VAR%", variant.id)} target="_blank">{variant.flag} {variant.name}</a>
+                            <a href={cv.base.replace("%VAR%", variant.id)} target="_blank">
+                              <span class="icon-text">
+                                <span class="icon">
+                                  {variant.flag}
+                                </span>
+                                <span>{variant.name}</span>
+                              </span>
+                            </a>
                           </li>
                         )}
                       </ul>
