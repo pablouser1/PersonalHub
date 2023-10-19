@@ -27,8 +27,9 @@ pnpm-debug.log*
 /config.mjs
 /src/data/*.json
 !/src/data/*.sample.json
-/src/pages/blog/*.md
 /public/img/custom/*
 !/public/img/custom/.gitkeep
+
+# Docs (CV)
 /public/docs/*
 !/public/docs/.gitkeep

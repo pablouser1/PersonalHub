@@ -2,10 +2,11 @@
 import Social from "../components/Social.astro";
 import Head from '../components/Head.astro';
 import Links from "../components/Links.astro";
-import type Background from "../interfaces/Background";
-import type CV from "../interfaces/CV";
 import PhotoAside from "../components/PhotoAside.astro";
 import FooterCommon from "../components/FooterCommon.astro";
+import type Background from "../interfaces/Background";
+import type CV from "../interfaces/CV";
+
 
 const { ME_NAME, ME_IMAGE } = import.meta.env;
 
@@ -28,7 +29,7 @@ const loadBackground = async (): Promise<Background> => {
 /**
  * Handle CV data
  */
-const loadCV = async (): Promise<CV> => {
+ const loadCV = async (): Promise<CV> => {
   try {
     const cv = await import('../data/cv.json');
     return cv.default;
@@ -61,18 +62,23 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
                 <PhotoAside src={ME_IMAGE} alt={ME_NAME} l_size="narrow" r_size="narrow" ratio="128x128" mobile rounded>
                   <p class="title">Welcome!</p>
                   <p class="subtitle">
-                    <span>I'm</span> <span>{ME_NAME}</span>
+                    <span>I'm {ME_NAME}</span>
                   </p>
-                  <p class="is-size-6 has-text-grey-light">My CV</p>
-                  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-                    <ul>
-                      {cv.variants.map(variant =>
-                        <li>
-                          <a href={cv.base.replace("%VAR%", variant.id)}>{variant.flag} {variant.name}</a>
-                        </li>
-                      )}
-                    </ul>
-                  </nav>
+                  {
+                  cv.variants.length > 0 && <>
+                    <p class="is-size-6 has-text-grey-light">My CV</p>
+                    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+                      <ul>
+                        {cv.variants.map(variant =>
+                          <li>
+                            <a href={cv.base.replace("%VAR%", variant.id)} target="_blank">{variant.flag} {variant.name}</a>
+                          </li>
+                        )}
+                      </ul>
+                    </nav>
+                  </>
+                  }
+
                 </PhotoAside>
                 <div class="columns is-centered is-vcentered">
                   <div class="column is-half">
