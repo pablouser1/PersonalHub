@@ -1,6 +1,4 @@
-type Input = InputEvent & {
+export type Input = InputEvent & {
   currentTarget: HTMLInputElement;
   target: Element;
 }
-
-export default Input

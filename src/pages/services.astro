@@ -2,7 +2,7 @@
 import Default from "../layouts/Default.astro";
 import Filter from "../components/Filter";
 import type Service from "../interfaces/Service";
-import Services from "../components/Services.astro";
+import ServicesWidget from "../components/Services.astro";
 
 const getServices = async (): Promise<Service[]> => {
   try {
@@ -25,5 +25,5 @@ const services = await getServices();
   <div class="container">
     <Filter client:only="solid-js" />
   </div>
-  <Services services={services} />
+  <ServicesWidget services={services} />
 </Default>

@@ -1,7 +1,7 @@
 ---
 import Default from "../layouts/Default.astro";
 import type Support from "../interfaces/Support";
-import Icon from "astro-icon";
+import { Icon } from 'astro-icon/components';
 
 const getSupport = async (): Promise<Support[]> => {
   try {
@@ -23,7 +23,7 @@ const support = await getSupport();
     <ul>
       {
         support.map(item => {
-          const icon = item.pack ? <Icon pack={item.pack} name={item.icon} /> : <img src={item.icon} alt={item.name} />
+          const icon = item.pack ? <Icon name={`${item.pack}:${item.icon}`} size={24} /> : <img src={item.icon} alt={item.name} />
           return (
             <li>
               <a href={item.url} target="_blank">
@@ -42,7 +42,7 @@ const support = await getSupport();
     <p>
       <span class="icon-text">
         <span class="icon">
-          <Icon style="color: red;" pack="fa-solid" name="heart" />
+          <Icon name="fa-solid:heart" style="color: red;" />
         </span>
         <span>Thank you for your support!</span>
       </span>

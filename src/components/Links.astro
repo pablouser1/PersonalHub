@@ -1,5 +1,5 @@
 ---
-import Icon from "astro-icon";
+import { Icon } from 'astro-icon/components';
 import sections from "../constants/Sections";
 ---
 
@@ -12,7 +12,7 @@ import sections from "../constants/Sections";
           <a href={section.url}>
             <span class="icon-text">
               <span class="icon">
-                <Icon pack={section.pack} name={section.icon} style={`color: ${section.color}`} />
+                <Icon name={`${section.pack}:${section.icon}`} size={24} style={`color: ${section.color}`} />
               </span>
               <span>{section.name}</span>
             </span>
