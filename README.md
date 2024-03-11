@@ -1,5 +1,5 @@
 # Personal Hub
-My personal page made using Astro, Svelte and Bulma
+My personal page made using Astro, SolidJS and Bulma
 
 ## Installation
 ```bash

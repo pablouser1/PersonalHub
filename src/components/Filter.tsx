@@ -1,4 +1,4 @@
-import type Input from "../interfaces/Input";
+import type { Input } from "../interfaces/Input";
 
 const Filter = () => {
   const items = document.getElementsByClassName('item') as HTMLCollectionOf<HTMLDivElement>
