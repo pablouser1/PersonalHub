@@ -45,8 +45,13 @@ const { ME_NAME, ME_IMAGE } = import.meta.env;
             <div class="box has-text-centered">
               <PhotoAside alt={vol.name} src={vol.image} l_size={5} r_size={7} mobile ratio="1by1">
                 <p class="title">{vol.name}</p>
-                <p class="subtitle">{vol.date}</p>
-                <a href={vol.url} target="_blank">More info</a>
+                <div class="buttons is-centered">
+                  {vol.editions.map(edition => {
+                    return (
+                      <a title={edition.date} class="button" href={edition.url} target="_blank">{edition.name}</a>
+                    )
+                  })}
+                </div>
               </PhotoAside>
             </div>
           </div>
