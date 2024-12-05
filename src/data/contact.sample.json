@@ -2,14 +2,14 @@
   {
     "name": "Github",
     "icon": "github",
-    "pack": "fa-brands",
+    "pack": "fa6-brands",
     "color": "black",
     "url": "https://github.com/github"
   },
   {
     "name": "Twitter",
     "icon": "twitter",
-    "pack": "fa-brands",
+    "pack": "fa6-brands",
     "color": "#00acee",
     "url": "https://twitter.com/twitter"
   }
