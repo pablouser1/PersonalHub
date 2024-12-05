@@ -1,41 +1,46 @@
-@charset "utf-8";
-@import "../../node_modules/bulmaswatch/darkly/_variables.scss";
+// Brand colors
+//$pink: #fa7c91;
 
-// Utilities
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
+/*
+@use "bulma/sass/utilities" with (
+  $primary: $pink
+);
+*/
 
-// Base
-@import "../../node_modules/bulma/sass/base/_all.sass";
+@use "bulma/sass/utilities";
 
-// Elements
-@import "../../node_modules/bulma/sass/elements/box.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
-@import "../../node_modules/bulma/sass/elements/content.sass";
-@import "../../node_modules/bulma/sass/elements/icon.sass";
-@import "../../node_modules/bulma/sass/elements/image.sass";
-@import "../../node_modules/bulma/sass/elements/other.sass";
-@import "../../node_modules/bulma/sass/elements/tag.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-
-// Form
-@import "../../node_modules/bulma/sass/form/shared.sass";
-@import "../../node_modules/bulma/sass/form/input-textarea.sass";
-@import "../../node_modules/bulma/sass/form/tools.sass";
+@forward "bulma/sass/base";
 
 // Components
-@import "../../node_modules/bulma/sass/components/breadcrumb.sass";
-@import "../../node_modules/bulma/sass/components/card.sass";
-@import "../../node_modules/bulma/sass/components/menu.sass";
-@import "../../node_modules/bulma/sass/components/navbar.sass";
+@forward "bulma/sass/components/breadcrumb";
+@forward "bulma/sass/components/card";
+@forward "bulma/sass/components/menu";
+@forward "bulma/sass/components/navbar";
 
-// Grids
-@import "../../node_modules/bulma/sass/grid/columns.sass";
+// Elements
+@forward "bulma/sass/elements/box";
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/icon";
+@forward "bulma/sass/elements/image";
+@forward "bulma/sass/elements/tag";
+@forward "bulma/sass/elements/title";
+
+// Form
+@forward "bulma/sass/form/input-textarea.scss";
+@forward "bulma/sass/form/shared";
+@forward "bulma/sass/form/tools";
+
+// Grid
+@forward "bulma/sass/grid/columns";
 
 // Helpers
-@import "../../node_modules/bulma/sass/helpers/_all.sass";
+@forward "bulma/sass/helpers/typography";
 
 // Layout
-@import "../../node_modules/bulma/sass/layout/_all.sass";
+@forward "bulma/sass/layout/container";
+@forward "bulma/sass/layout/footer";
+@forward "bulma/sass/layout/hero";
+@forward "bulma/sass/layout/level";
+@forward "bulma/sass/layout/section";
 
-@import "../../node_modules/bulmaswatch/darkly/_overrides.scss";
+@forward "bulma/sass/themes";

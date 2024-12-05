@@ -53,7 +53,12 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
 <html lang="en">
   <Head title="Home" description={FINAL_DESCRIPTION} name={ME_NAME} />
   <body>
-    <section class="hero is-fullheight has-bg-img">
+    <section class="hero is-fullheight" style={{
+      "background": `url("${background.url}")`,
+      "background-position": "center",
+      "background-repeat": "no-repeat",
+      "background-size": "cover"
+    }}>
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="columns is-centered">
@@ -86,14 +91,14 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
                   </>
                   }
                 </PhotoAside>
-                <div class="columns is-centered is-vcentered">
-                  <div class="column is-half">
+                <nav class="level">
+                  <div class="level-item">
                     <Links />
                   </div>
-                  <div class="column is-half">
+                  <div class="level-item">
                     <Social />
                   </div>
-                </div>
+                </nav>
               </div>
             </div>
           </div>
@@ -112,12 +117,3 @@ const FINAL_DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`
     </section>
   </body>
 </html>
-
-<style lang="scss" define:vars={{ url: `url("${background.url}")` }}>
-  .has-bg-img {
-    background: var(--url);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>
