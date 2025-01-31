@@ -14,7 +14,7 @@ const { src, alt, l_size, r_size, ratio, mobile, rounded } = Astro.props
 
 <div class:list={["columns", "is-centered", "is-vcentered", {"is-mobile": mobile}]}>
   <div class:list={["column", `is-${l_size}`]}>
-    <figure class:list={["image", `is-${ratio}`]}>
+    <figure class:list={["image", "container", `is-${ratio}`]}>
       <img alt={alt} src={src} class:list={[{"is-rounded": rounded}]} />
     </figure>
   </div>
