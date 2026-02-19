@@ -20,13 +20,18 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# Local
+# jetbrains setting folder
+.idea/
+
+# config
 /config.mjs
+
+# json
 /src/data/*.json
 !/src/data/*.sample.json
+/src/data/resume/*
+!/src/data/resume/.gitkeep
+
+# assets
 /public/img/custom/*
 !/public/img/custom/.gitkeep
-
-# Docs (CV)
-/public/docs/*
-!/public/docs/.gitkeep

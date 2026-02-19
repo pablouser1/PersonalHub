@@ -1,13 +1,14 @@
 [
   {
     "name": "Liberapay",
-    "icon": "/img/custom/icons/liberapay.svg",
+    "icon": "liberapay",
+    "pack": "simple-icons",
     "url": "https://example.com"
   },
   {
     "name": "PayPal",
     "icon": "paypal",
-    "pack": "fa6-brands",
+    "pack": "simple-icons",
     "url": "https://example.com"
   }
 ]

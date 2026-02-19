@@ -1,7 +1,5 @@
 ---
 import Head from "../components/Head.astro";
-import Navbar from "../components/Navbar";
-import Sections from "../constants/Sections";
 import Footer from "../components/Footer.astro";
 import type Props from "../interfaces/DefaultProps";
 
@@ -19,9 +17,6 @@ const { ME_NAME } = import.meta.env;
         <div class="container has-text-centered">
           <slot name="header" />
         </div>
-      </div>
-      <div class="hero-foot">
-        <Navbar client:idle sections={Sections} />
       </div>
     </section>
     <section class="section">

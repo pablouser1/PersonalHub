@@ -1,0 +1,20 @@
+---
+import * as theme from "jsonresume-theme-even";
+import { LANGS } from "../../common";
+import Resume from "../../helpers/Resume";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => {
+    return {
+      params: {
+        lang,
+      },
+    };
+  });
+}
+
+const resume = await Resume.build(Astro.params.lang!);
+const html = theme.render(resume);
+---
+
+<Fragment set:html={html} />
