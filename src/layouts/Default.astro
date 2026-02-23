@@ -2,13 +2,13 @@
 import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
 import type Props from "../interfaces/DefaultProps";
+import Navbar from "../components/Navbar.astro";
 
 const { title, description } = Astro.props;
 
 const { ME_NAME } = import.meta.env;
 ---
 
-<!DOCTYPE html>
 <html lang="en">
   <Head title={title} description={description} name={ME_NAME} />
   <body>
@@ -19,6 +19,7 @@ const { ME_NAME } = import.meta.env;
         </div>
       </div>
     </section>
+    <Navbar />
     <section class="section">
       <slot />
     </section>
