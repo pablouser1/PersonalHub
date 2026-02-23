@@ -3,8 +3,8 @@ import PhotoAside from "../components/PhotoAside.astro";
 import Head from "../components/Head.astro";
 import FooterCommon from "../components/FooterCommon.astro";
 import type Background from "../interfaces/Background";
-import Resume from "../components/Resume.astro";
 import Links from "../components/Links.astro";
+import Resume from "../components/Resume.astro";
 
 const { ME_NAME, ME_IMAGE } = import.meta.env;
 const DESCRIPTION = `Hi! I'm ${ME_NAME}, welcome to my personal website!`;
@@ -47,13 +47,11 @@ const background = await loadBackground();
                   <p class="subtitle">
                     <span>I'm {ME_NAME}</span>
                   </p>
+                  <Resume />
                 </PhotoAside>
                 <nav class="level">
                   <div class="level-item">
                     <Links />
-                  </div>
-                  <div class="level-item">
-                    <Resume />
                   </div>
                 </nav>
               </div>

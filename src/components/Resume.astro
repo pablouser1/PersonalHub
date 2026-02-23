@@ -1,24 +1,11 @@
 ---
-import { LANGS } from "../common"
-import Language from "../helpers/Language"
+import { Icon } from "astro-icon/components";
+
 ---
 
-<aside class="menu">
-  <p class="menu-label">Resume</p>
-  <ul class="menu-list">
-    {LANGS.map(lang => {
-      return (
-        <li>
-          <a href={`/resume/${lang}`}>
-            <span class="icon-text">
-              <span class="icon" style="font-size: 24px;">
-                {Language.flag(lang)}
-              </span>
-              <span>{Language.name(lang)}</span>
-            </span>
-          </a>
-        </li>
-      )
-    })}
-  </ul>
-</aside>
+<a class="button is-primary" href="/resume">
+  <span class="icon">
+    <Icon name="fa6-solid:file" />
+  </span>
+  <span>My Resume</span>
+</a>

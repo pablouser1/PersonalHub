@@ -1,0 +1,9 @@
+---
+import * as theme from "jsonresume-theme-even";
+import ResumeHelper from "../helpers/Resume";
+
+const resume = await ResumeHelper.build();
+const html = theme.render(resume);
+---
+
+<Fragment set:html={html} />
