@@ -1,4 +1,11 @@
 # Personal Hub
+> [!WARNING]
+> **This repository has moved to Codeberg!**
+> Development on GitHub has been discontinued, and this repository is now read-only.
+> 
+> New repository:
+> 🔗 **[codeberg.org/pablouser1/PersonalHub](https://codeberg.org/pablouser1/PersonalHub)**
+
 My personal page made using Astro, Bulma and resume-json.
 
 ## Installation
